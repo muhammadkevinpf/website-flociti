@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar-brand img {
+    position: relative;
+    width: 170px;
+    left: 15px;
+    max-height: 70px;
+    /* height of the navbar */
+}
+
+.navbar-nav .nav-item.active>.nav-link,
+.navbar-nav .nav-item:active:focus>.nav-link,
+.navbar-nav .nav-item:active>.nav-link,
+.navbar-nav .nav-item:focus>.nav-link,
+.navbar-nav .nav-item:hover>.nav-link {
+    color: #ef2828;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link,
+.navbar-nav .nav-link {
+    font-size: 2.5vh;
+}
