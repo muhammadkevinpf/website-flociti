@@ -22,3 +22,18 @@
     color: white;
     font-family: 'Karla', sans-serif;
 }
+
+.labelBiru {
+    font-size: 14px;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.card-image {
+    background: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/307050/bca1021db33fb6063bdf8e5d311735874d4c61d9.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+    width: 100%;
+}

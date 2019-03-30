@@ -1,3 +1,13 @@
+<?php
+    include 'class/komen.php';
+    include 'config/conn.php';
+
+    $kontak = new komen;
+
+    if(isset($_POST['submit'])){
+        $kontak->insertKomen($conn,$_POST['nama'],$_POST['email'],$_POST['pesan']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +44,7 @@
         </ul>
     </section>
     
-    <section>
+    <section id="service">
         <div class="row p-5">
             <div class="col-lg-12 text-center">
                 <h2>Layanan Kami</h2>
@@ -151,7 +161,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="kontak">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-12 mt-5">
@@ -190,13 +200,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <form action="" method="post">
+                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                         <div class="form-group input-material pb-1">
-                            <input type="text" name="nama" class="form-control"/>
+                            <input type="text" name="nama" class="form-control text-capitalize" value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['nama']; ?>"/>
                             <label for="nama">Nama</label>
                         </div>
                         <div class="form-group input-material pb-1">
-                            <input type="email" name="email" class="form-control"/>
+                            <input type="email" name="email" class="form-control" value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['email']; ?>"/>
                             <label for="email">Email</label>
                         </div>
                         <div class="form-group input-material pb-1">
@@ -210,7 +220,7 @@
         </div>
         <div class="col-lg-12 footer">
             <footer>
-                <h5 class="text-center">Copyright &copy; <?php echo date('Y');?></h5>
+                <h5 class="text-center text-white">Copyright &copy; <?php echo date('Y');?></h5>
             </footer>
         </div>
     </section>
@@ -249,6 +259,8 @@
             });
         });
         AOS.init();
+
+        $('body').materializeInputs();
     </script>
 </body>
 

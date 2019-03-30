@@ -5,7 +5,8 @@
     <div class="collapse navbar-collapse justify-content-sm-end">
         <ul class="navbar-nav navbar-mobile mr-0">
             <li class="nav-item active"><a class="nav-link" href="/flocity/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/flocity/#2">Jadwal</a></li>
+            <li class="nav-item"><a class="nav-link" href="#service">Layanan</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kontak">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="/flocity/booking/">Booking</a></li>
             <?php
                 if(isset($_SESSION['nama']))

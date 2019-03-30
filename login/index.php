@@ -1,18 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php 
-	include '../config/conn.php';
-	include '../class/validation.php';
-	$validate = new validation;
-	session_start();
-	if(isset($_POST['login'])){
-		$validate->login($conn,$_POST['email'],$_POST['pass']);
-		$_SESSION['nama'] = $validate->getNama();
-		$_SESSION['id'] = $validate->getID();
-		$_SESSION['telp'] = $validate->getTelp();
-	}
-?>
 <head>
 	<title>Login Flocity</title>
 	<meta charset="UTF-8">
@@ -53,7 +40,19 @@
 						Login
 					</span>
 
-
+					<?php 
+						include '../config/conn.php';
+						include '../class/validation.php';
+						$validate = new validation;
+						session_start();
+						if(isset($_POST['login'])){
+							$validate->login($conn,$_POST['email'],$_POST['pass']);
+							$_SESSION['nama'] = $validate->getNama();
+							$_SESSION['id'] = $validate->getID();
+							$_SESSION['telp'] = $validate->getTelp();
+							$_SESSION['email'] = $validate->getEmail();
+						}
+					?>
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100"></span>

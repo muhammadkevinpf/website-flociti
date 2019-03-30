@@ -1,4 +1,5 @@
 <?php 
+    date_default_timezone_set('Asia/Jakarta');
     $date = date('Y-m-d');
     include '../config/conn.php';
     include '../class/jadwal.php';
@@ -45,7 +46,7 @@
                                 </div>
                                 <div class="col-lg-6 mt-4">
                                     <div class="form-group">
-                                        <label for="rute">Keberangkatan</label>
+                                        <label for="keberangkatan" class='labelBiru'>Keberangkatan</label>
                                         <select name="keberangkatan" class="form-control">
                                             <?php $jadwal->selectJam($conn);?>
                                         </select>
@@ -53,20 +54,26 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group input-material">
-                                        <input type="number" class="form-control" name="jumlah" min='1' value="1"/>
+                                        <input type="number" class="form-control" id="jumlah" name="jumlah" min='1' value="1"/>
                                         <label for="jumlah">Jumlah</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="rute">Rute</label>
+                                        <label for="rute" class='labelBiru'>Rute</label>
                                         <select name="rute" class="form-control" id="cmbFrom">
                                             <option value="1">Bandung - Jatinangor</option>
                                             <option value="2">Jatinangor - Bandung</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 mt-4 text-center">
+                                <div class="col-lg-6">
+                                    <div class="form-group text-center mt-4 pt-2">
+                                        <label class='text-danger'>Harga: </label>
+                                        <label class='text-danger' id="harga">17000</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
                                     <button type="submit" name="order" class="btn btn-danger btn-block mt-2" <?php if(!isset($_SESSION['nama'])) echo 'disabled';?>>Order</button>
                                 </div>
                             </div>
@@ -96,7 +103,7 @@
                         </tr>
                     </thead>
                     <tbody class="tblJadwal">
-                        
+                        <?php $jadwal->slotKursi($conn,'1');?>
                     </tbody>
                 </table>
             </div>
@@ -124,6 +131,26 @@
                         $('.tblJadwal').html(response);
                     }
                 });
+            });
+
+            $("#jumlah").keyup(function(){
+                var jumlah = this.value;
+                if(jumlah > 10){
+                    this.value = 10;
+                    jumlah = 10;
+                    var total = jumlah * 17000;
+                }
+                $("#harga").html(total);
+            });
+
+            $("#jumlah").on('input',function(){
+                var jumlah = this.value;
+                if(jumlah > 10){
+                    this.value = 10;
+                    jumlah = 10;
+                    var total = jumlah * 17000;
+                }
+                $("#harga").html(total);
             });
 
         });
