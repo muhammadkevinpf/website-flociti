@@ -1,3 +1,9 @@
+<?php 
+    include '../class/saldo.php';
+    include '../config/conn.php';
+    $saldo = new saldo;
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +14,42 @@
     <?php include '../css.php';?>
 </head>
 <body>
+<?php include '../navbar.php'; $saldo->getProfile($conn,$_SESSION['id']);?>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="card h-100">
-                    <div class="card-image p-5 text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle img-fluid">
-                        <h4 class="pt-4">Ateng Ganteng</h4>
-                        <p><span class="pr-2"><i class="far fa-envelope"></i></span>tengg@gmail.com</p>
+            <div class="col-lg-4">
+                <div class="card h-100" style="border-radius:10% 10% 0 0;">
+                    <div class="card-image p-5 text-center" style="border-radius:10% 10% 0 0 ;">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle img-fluid" alt="ateng">
+                        <h4 class="pt-4 text-capitalize"><?php echo $_SESSION['nama'];?></h4>
+                        <small><span class="pr-2"><i class="far fa-envelope"></i></span><?php echo $_SESSION['email'];?></small>
                     </div>
+                    <div class="card-body text-center">
+                    <p>Saldo: <?php echo $saldo->rupiah($saldo->getSaldo()); ?></p>
+                        <a href="#" class="btn btn-danger" style="font-size:14px;">Edit Profile</a>
+                        <a href="#" class="btn btn-primary" style="font-size:14px;">Tambah Saldo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h4 class="card-title text-center">Daftar Transaksi</h4>
+                        <table class="table">
+                            <thead>
+                                <tr class='text-center'>
+                                    <th>No Order</th>
+                                    <th>Rute</th>
+                                    <th>Tujuan</th>
+                                    <th>Tanggal</th>
+                                    <th>Jumlah</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $saldo->getOrder($conn,$_SESSION['id']); ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
