@@ -8,4 +8,6 @@
 <script src="/flocity/assets/js/materialize-inputs.jquery.js"></script>
 <script src="/flocity/assets/js/jquery.mask.js"></script>
 <script src="/flocity/assets/js/custombox.min.js"></script>
+<script src="/flocity/assets/js/bootstrap-table.min.js"></script>
+<script src="/flocity/assets/js/tooltipster.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

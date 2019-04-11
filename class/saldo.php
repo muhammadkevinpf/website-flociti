@@ -26,14 +26,26 @@
             $res = $conn->query($sql);
             while($row = $res->fetch_assoc()){
                 $total = 17000 * $row['jumlah'];
-                echo "<tr>
+                echo "<tr class='text-center'>
                 <td class='text-capitalize'>".$row['id']."</td>
                 <td>".$row['dari'].' - '.$row['ke']."</td>
                 <td>".$row['berangkat']."</td>
                 <td>".$row['tanggal']."</td>
-                <td>".$total."</td>
-                <td>".$row['status']."</td>
-                </tr>";
+                <td>".number_format($total,'0',',','.')."</td>";
+                if($row['status'] == "Belum Bayar"){
+                    echo "<td><a href='#modalBayar' data-toggle='modal'>Belum Dibayar</a></td>";
+                }else{
+                    echo "<td>Sudah Bayar</td>";
+                }
+                "</tr>";
+            }
+        }
+        public function insertSaldo($conn,$jumlah,$id){
+        $total = $this->getSaldo() + $jumlah;
+        $sql = "UPDATE payment set saldo = '{$total}' where idUser='{$id}'";
+        $res = $conn->query($sql);
+            if($res){
+                echo "$('#modalKu').modal('show');";
             }
         }
     }

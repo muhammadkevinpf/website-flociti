@@ -9,7 +9,9 @@
 <link rel="stylesheet" href="/flocity/assets/css/css.css" type="text/css"/>
 <link rel="stylesheet" href="/flocity/assets/css/owl.carousel.min.css" type="text/css"/>
 <link rel="stylesheet" href="/flocity/assets/css/owl.theme.default.css" type="text/css"/>
-<link rel="stylesheet" href="/flocity/assets/css/custombox.min" type="text/css"/>
+<link rel="stylesheet" href="/flocity/assets/css/custombox.min.css" type="text/css"/>
+<link rel="stylesheet" href="/flocity/assets/css/tooltipster.bundle.min.css" type="text/css"/>
+<link rel="stylesheet" href="/flocity/assets/css/bootstrap-table.min" type="text/css"/>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 

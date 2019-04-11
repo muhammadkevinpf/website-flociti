@@ -37,3 +37,7 @@
     color: white;
     width: 100%;
 }
+
+#tambahsaldo {
+    cursor: pointer;
+}
