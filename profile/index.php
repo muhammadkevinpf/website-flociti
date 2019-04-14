@@ -28,7 +28,7 @@
                     </div>
                     <div class="card-body text-center">
                     <p><i class="fas fa-money-bill-wave" style="color:#42f45c;"></i> <?php echo $saldo->rupiah($saldo->getSaldo()); ?> <a  data-toggle="modal" data-target="#modelId" class='pl-2' title="Tambah Saldo" id="tambahsaldo"><i class="fas fa-plus" ></i></a></p>
-                        <a href="#" class="btn btn-danger" style="font-size:14px;">Edit Profile</a>
+                        <a href="#" class="btn btn-danger" id="btnEdit" style="font-size:14px;">Edit Profile</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title text-center">Daftar Transaksi</h4>
-                        <table class="table tableOrder">
+                        <table class="table tableOrder" id="tableOrder">
                             <thead  class="mt-2">
                                 <tr>
                                     <th class='text-center'>No Order</th>
@@ -109,7 +109,22 @@
                             <img src="../assets/img/icon/question.png" class="img-fluid m-4"/>
                             <h4 class="mb-4">Bayar Tiket?</h4>
                             <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="pr-2"><i class="fas fa-times"></i></span>Cancel</button>
-                            <button type="submit" name="submit" class="btn btn-success ml-3"><span class="pr-2"><i class="fas fa-check"></i></span>Save</button>
+                            <button type="button" name="submit" class="btn btn-success ml-3" id="bayar"><span class="pr-2"><i class="fas fa-check"></i></span>Bayar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalThanks" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-center">
+                            <img src="../assets/img/icon/checked.png" class="img-fluid m-4"/>
+                            <h5 class="mt-4">Pembayaran No <span class='font-weight-bold' id="headId"></span> Sukses!<br>Terima kasih sudah menggunakan Flociti!</h5>
                         </div>
                     </div>
                 </div>
@@ -139,9 +154,36 @@
                 showPaginationSwitch: true
             });
 
-    });
-    $('#modalKu').on('hidden.bs.modal', function () {
-        // do something…
+            $('#btnEdit').click(function(){
+                
+            });
+
+            $('#tableOrder tbody tr').click(function(){
+                var edan = $(this).index();
+                var nomor = $('#kolom'+edan).text();
+                var total = $('#bayar'+edan).text();
+                $('#bayar').click(function(){
+                    $.ajax({
+                        type: 'post',
+                        url: 'ajaxInsertBayar.php',
+                        data: {id:nomor, bayar:total},
+                        success: function(response){
+                            $('#modalBayar').modal('hide');
+                            if(response == 'berhasil'){
+                                $('#modalThanks').modal('show');
+                                $('#headId').html(nomor);
+                                $('#modalThanks').on('hidden.bs.modal', function () {
+                                    window.location.href = '/flocity/profile/';
+                                });
+                            }
+                            
+                            
+                        }
+                    });
+                });
+            });
+        });
+        $('#modalKu').on('hidden.bs.modal', function () {
             window.location.href = '/flocity/profile/';
         });
     </script>

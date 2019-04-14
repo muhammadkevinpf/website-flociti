@@ -18,6 +18,7 @@
             return $hasil_rupiah;
         }
         public function getOrder($conn,$id){
+            $current = 0;
             $sql = "SELECT o.id, j.berangkat, r.dari,r.ke, o.tanggal, o.jumlah, o.status FROM orderuser as o
             INNER JOIN users AS u ON u.id = o.idUser
             INNER JOIN rute AS r ON r.id = o.idRute
@@ -27,17 +28,18 @@
             while($row = $res->fetch_assoc()){
                 $total = 17000 * $row['jumlah'];
                 echo "<tr class='text-center'>
-                <td class='text-capitalize'>".$row['id']."</td>
+                <td class='text-capitalize' id='kolom".$current."'>".$row['id']."</td>
                 <td>".$row['dari'].' - '.$row['ke']."</td>
                 <td>".$row['berangkat']."</td>
                 <td>".$row['tanggal']."</td>
-                <td>".number_format($total,'0',',','.')."</td>";
+                <td id='bayar".$current."'>".number_format($total,'0',',','.')."</td>";
                 if($row['status'] == "Belum Bayar"){
-                    echo "<td><a href='#modalBayar' data-toggle='modal'>Belum Dibayar</a></td>";
+                    echo "<td><a href='#modalBayar' value='".$row['id']."' data-toggle='modal' class='edan'>Belum Dibayar</a></td>";
                 }else{
                     echo "<td>Sudah Bayar</td>";
                 }
                 "</tr>";
+                $current++;
             }
         }
         public function insertSaldo($conn,$jumlah,$id){

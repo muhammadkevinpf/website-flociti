@@ -36,7 +36,7 @@ class jadwal{
             }
             $date = str_replace("-","",$tanggal).''.$counter;
         }
-        $sql = "insert into orderuser values ('{$date}','{$idNama}','{$jam}','{$rute}','{$tanggal}','{$jumlah}','{$telp}')";
+        $sql = "insert into orderuser values ('{$date}','{$idNama}','{$jam}','{$rute}','{$tanggal}','{$jumlah}','{$telp}','Belum Bayar')";
         $res = $conn->query($sql);
         if($res){
             echo "$('#modalku').modal('show');";

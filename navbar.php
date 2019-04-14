@@ -9,10 +9,22 @@
             <li class="nav-item"><a class="nav-link" href="#kontak">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="/flocity/booking/">Booking</a></li>
             <?php
-                if(isset($_SESSION['nama']))
-                    echo '<li class="nav-item"><a class="nav-link" href="/flocity/logout.php">Logout</a></li>';
-                else
-                    echo '<li class="nav-item"><a class="nav-link" href="/flocity/login/">Login</a></li>';
+                if(isset($_SESSION['nama'])){
+                    // echo '<li class="nav-item"><a class="nav-link" href="/flocity/logout.php">Logout</a></li>';
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-capitalize" href="#"><?php echo $_SESSION['nama'];?> <i class="caret"></i></a>
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="/flocity/profile/">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/flocity/logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php
+                }
+                else{
+                echo '<li class="nav-item"><a class="nav-link" href="/flocity/login/">Login</a></li>';
+                }
+                
             ?>
         </ul>
     </div>
