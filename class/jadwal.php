@@ -1,7 +1,7 @@
 <?php
 class jadwal{
     protected $jumlah;
-
+    public $counter = 1;
     public function setJumlah($jumlah){
         $this->jumlah = $jumlah;
     }
@@ -56,18 +56,21 @@ class jadwal{
         }
     }
     public function selectRute($conn,$rute){
+
         $sql = "select * from rute where id='{$rute}'";
         $res = $conn->query($sql);
         while($row = $res->fetch_assoc()){
-            echo "<tr>
+            echo "<tr class='baris' id='baris{$this->counter}'>
             <td>".$row['ke']."</td>
             ";
+            $this->counter++;
         }
     }
     public function slotKursi($conn,$rute){
+        $jam = date("H:i:s");
         $this->countJumlah($conn);
         $sisaKursi = 17 - $this->getJumlah();
-            for($j = $sisaKursi; $j <= 16; $j++){
+            for($j = 1; $j <= 16; $j++){
                 $totalkursi = 14;
                 $isi = 0;
                 $sql = "SELECT j.berangkat, o.jumlah from orderuser as o 
@@ -81,7 +84,16 @@ class jadwal{
                 $this->selectRute($conn,$rute);
                 $totalkursi = $totalkursi - $isi;
                 $this->selectJadwal($conn,$j);
-                echo "<td class='text-center'>{$totalkursi}</td></tr>";
+
+                if($totalkursi == 0){
+                    echo "
+                    <td class='text-center' id='col".$j."'>{$totalkursi}</td></tr><script>
+                        $('#baris'+".$j.").addClass('text-danger');
+                    </script>";
+                }else{
+                    echo "<td class='text-center' id='col".$j."'>{$totalkursi}</td></tr>";
+                }
+                
             }
     }
 

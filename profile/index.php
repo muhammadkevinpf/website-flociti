@@ -132,9 +132,58 @@
         </div>
     </div>
     
-    <?php include '../js.php';?>
+    <!-- Modal -->
+    <div class="modal fade" id="modalEditProfile" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='POST'>
+                        <div class="form-group input-material">
+                            <input type="text" name="nama" class="form-control text-capitalize" value="<?php echo $_SESSION['nama'];?>"/>
+                            <label for="nama">Nama</label>
+                        </div>
+                        <div class="form-group input-material">
+                            <input type="email" name="email" class="form-control" value="<?php echo $_SESSION['email'];?>"/>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group input-material">
+                            <input type="text" name="telpon" class="form-control" value="<?php echo $_SESSION['telp'];?>"/>
+                            <label for="telpon">Nomor Telepon</label>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" name="btnUpdate">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <?php include '../js.php';
+    if(isset($_POST['btnUpdate'])){
+        $nama = $_POST['nama'];
+        $email = $_POST['email'];
+        $telp = $_POST['telpon'];
+        $_SESSION['nama'] = $nama;
+        $_SESSION['email'] = $email;
+        $_SESSION['telp'] = $telp;
+        $sql = "update users set nama='{$nama}', email = '{$email}', telp='{$telp}' where id = ".$_SESSION['id']."";
+        $conn->query($sql);
+        echo '<meta http-equiv="refresh" content="0;url=/flocity/profile/" />';
+    }
+    
+    
+    ?>
     <script>
     $(document).ready(function(){
+        $('body').materializeInputs();
         $('#tambahsaldo').tooltipster({
             arrow:false,
             side: 'right'
@@ -155,7 +204,7 @@
             });
 
             $('#btnEdit').click(function(){
-                
+                $('#modalEditProfile').modal('show');
             });
 
             $('#tableOrder tbody tr').click(function(){

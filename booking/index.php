@@ -28,19 +28,19 @@
                                 <div class="col-lg-12">
                                     <div class="form-group input-material">
                                         <input type="hidden" name="identitas" value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['id']?>"/>
-                                        <input type="text" name="nama" class="form-control" <?php if(isset($_SESSION['nama'])) echo "value='".$_SESSION['nama']."' disabled style='text-transform:capitalize;'"?>/>
+                                        <input type="text" name="nama" class="form-control" <?php if(isset($_SESSION['nama'])) echo "value='".$_SESSION['nama']."' disabled style='text-transform:capitalize;'"?> required/>
                                         <label for="nama">Nama</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group input-material">
-                                        <input type="text" id="phone" name="phone" class="form-control" value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['telp']?>" />
+                                        <input type="text" id="phone" name="phone" class="form-control" value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['telp']?>" required/>
                                         <label for="phone">No Telephone</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group input-material">
-                                        <input type="date" class="form-control" name="tanggal" value='<?php echo $date; ?>' min='<?php echo $date; ?>'/>
+                                        <input type="date" class="form-control" name="tanggal" value='<?php echo $date; ?>' min='<?php echo $date; ?>' required/>
                                         <label for="tanggal">Tanggal</label>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group input-material">
-                                        <input type="number" class="form-control" id="jumlah" name="jumlah" min='1' value="1"/>
+                                        <input type="number" class="form-control" id="jumlah" name="jumlah" min='1' value="1" required/>
                                         <label for="jumlah">Jumlah</label>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                 <small>*daftar/login terlebih dahulu untuk booking</small>
             </div>
             
-
+            <?php include '../js.php';?>
             <div class="col-lg-6 float-right">
                 <div class="d-flex flex-row">
                     <div class="pr-2"><h4>Cek Jadwal</h4></div>
@@ -109,9 +109,18 @@
             </div>
         </div>
     </div>
-    <?php include '../js.php';?>
+    
     <script>
         $(document).ready(function(){
+            var dt = new Date();
+            var n = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+            
+            for(var i = 1; i <=16 ; i++){
+                if($('#baris'+i).closest('tr').find('td:eq(1)').text() < n){
+                    $('#baris'+i).addClass('text-danger');
+                }
+            }
+
             $('body').materializeInputs();
             $("#phone").mask("9999-9999-9999");
             <?php
@@ -139,8 +148,11 @@
                     this.value = 10;
                     jumlah = 10;
                     var total = jumlah * 17000;
+                    $("#harga").html(total);
+                }else{
+                    var total = this.value * 17000;
+                    $("#harga").html(total);
                 }
-                $("#harga").html(total);
             });
 
             $("#jumlah").on('input',function(){
@@ -149,8 +161,11 @@
                     this.value = 10;
                     jumlah = 10;
                     var total = jumlah * 17000;
+                    $("#harga").html(total);
+                }else{
+                    var total = this.value * 17000;
+                    $("#harga").html(total);
                 }
-                $("#harga").html(total);
             });
 
         });

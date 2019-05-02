@@ -2,7 +2,7 @@
 class order{
     public function getOrder($conn){
         $no = 1;
-        $sql = "SELECT u.nama, j.berangkat, r.dari, o.tanggal, o.jumlah, o.telp FROM orderuser as o
+        $sql = "SELECT u.nama, j.berangkat,o.status, r.dari, o.tanggal, o.jumlah, o.telp FROM orderuser as o
         INNER JOIN users AS u ON u.id = o.idUser
         INNER JOIN rute AS r ON r.id = o.idRute
         INNER JOIN jadwal AS j ON j.id = o.idJadwal ORDER BY o.id desc";
@@ -16,6 +16,7 @@ class order{
             <td>".$row['tanggal']."</td>
             <td>".$row['jumlah']."</td>
             <td>".$row['telp']."</td>
+            <td>".$row['status']."</td>
             </tr>";
             $no++;
         }

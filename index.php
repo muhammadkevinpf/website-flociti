@@ -43,8 +43,8 @@
             </li>
         </ul>
     </section>
-    
-    <section id="service">
+
+    <!-- <section id="service">
         <div class="row p-5">
             <div class="col-lg-12 text-center">
                 <h2>Layanan Kami</h2>
@@ -115,44 +115,44 @@
             </div>
         </div>
         <div class="col-lg-12 merah"></div>
-    </section>
+    </section> -->
 
-    <section>
-        <div class="row mt-5">
+    <section id="testi">
+        <div class="row mt-5 h-75">
             <div class="col-lg-12">
                 <h2 class="text-center">Testimonial</h2>
                 <div class="testi mt-5">
-                    <div class="col-lg-6 mx-auto">
+                    <div class="col-lg-6 mx-auto" style="padding-top:6%">
                         <div class="owl-carousel owl-theme p-5">
                             <div class="item text-center">
                                 <h4><i class="fas fa-quote-right"></i></h4>
                                 <h3 class="font-weight-bold">Recommended</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis elementum suscipit. Praesent accumsan commodo blandit. Sed fermentum tellus arcu, ac posuere tellus finibus ac. Sed mi urna, volutpat at venenatis ac, malesuada et risus. Nunc tristique eros orci, condimentum mattis nisi accumsan vitae. Curabitur sagittis turpis sit amet eros gravida pulvinar. Donec vulputate urna mi, iaculis consequat ante fringilla suscipit. Aenean maximus imperdiet erat at aliquet. Vivamus egestas feugiat diam eget maximus.</p>
-                                <p class="font-weight-bold">- Ateng Sudrajat -</p>
+                                <p> Nyaman bangettt!!! Ada port buat charger bisa buat kerjain tugas juga di travel, shuttlenya bersih, operatornya juga ramah.</p>
+                                <p class="font-weight-bold">- Kirana Laras -</p>
                             </div>
                             <div class="item text-center">
                                 <h4><i class="fas fa-quote-right"></i></h4>
                                 <h3 class="font-weight-bold">Recommended</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis elementum suscipit. Praesent accumsan commodo blandit. Sed fermentum tellus arcu, ac posuere tellus finibus ac. Sed mi urna, volutpat at venenatis ac, malesuada et risus. Nunc tristique eros orci, condimentum mattis nisi accumsan vitae. Curabitur sagittis turpis sit amet eros gravida pulvinar. Donec vulputate urna mi, iaculis consequat ante fringilla suscipit. Aenean maximus imperdiet erat at aliquet. Vivamus egestas feugiat diam eget maximus.</p>
-                                <p class="font-weight-bold">- Ateng Sudrajat -</p>
+                                <p>Gaakan nyeseell pilih Flociti, nyaman banget, mau di mobil maupun di poolnya, ga nunggu lama juga dan ga kepanasan.</p>
+                                <p class="font-weight-bold">- Asep Suherman -</p>
                             </div>
                             <div class="item text-center">
                                 <h4><i class="fas fa-quote-right"></i></h4>
                                 <h3 class="font-weight-bold">Recommended</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis elementum suscipit. Praesent accumsan commodo blandit. Sed fermentum tellus arcu, ac posuere tellus finibus ac. Sed mi urna, volutpat at venenatis ac, malesuada et risus. Nunc tristique eros orci, condimentum mattis nisi accumsan vitae. Curabitur sagittis turpis sit amet eros gravida pulvinar. Donec vulputate urna mi, iaculis consequat ante fringilla suscipit. Aenean maximus imperdiet erat at aliquet. Vivamus egestas feugiat diam eget maximus.</p>
-                                <p class="font-weight-bold">- Ateng Sudrajat -</p>
+                                <p>Operator ramah, supir ga ugal-ugalan, selalu tepat waktu, dan yang paling penting poolnya nyaman bangeettt!!!! </p>
+                                <p class="font-weight-bold">- Agus Salim -</p>
                             </div>
                             <div class="item text-center">
                                 <h4><i class="fas fa-quote-right"></i></h4>
                                 <h3 class="font-weight-bold">Recommended</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis elementum suscipit. Praesent accumsan commodo blandit. Sed fermentum tellus arcu, ac posuere tellus finibus ac. Sed mi urna, volutpat at venenatis ac, malesuada et risus. Nunc tristique eros orci, condimentum mattis nisi accumsan vitae. Curabitur sagittis turpis sit amet eros gravida pulvinar. Donec vulputate urna mi, iaculis consequat ante fringilla suscipit. Aenean maximus imperdiet erat at aliquet. Vivamus egestas feugiat diam eget maximus.</p>
-                                <p class="font-weight-bold">- Ateng Sudrajat -</p>
+                                <p>Harganya sangat ramah di kantong, cocok banget buat mahasiswa.</p>
+                                <p class="font-weight-bold">- Clara Ginting -</p>
                             </div>
                             <div class="item text-center">
                                 <h4><i class="fas fa-quote-right"></i></h4>
                                 <h3 class="font-weight-bold">Recommended</h3>
-                                <p>Lorem ipsum dolor sit amet,Praesent accumsan commodo blandit. Sed fermentum tellus arcu, ac posuere tellus finibus ac. Sed mi urna, volutpat at venenatis ac, malesuada et risus. Nunc tristique eros orci, condimentum mattis nisi accumsan vitae. Curabitur sagittis turpis sit amet eros gravida pulvinar. Donec vulputate urna mi, iaculis consequat ante fringilla suscipit. Aenean maximus imperdiet erat at aliquet. Vivamus egestas feugiat diam eget maximus.</p>
-                                <p class="font-weight-bold">- Ateng Sudrajat -</p>
+                                <p>Males berpaling ke shuttle lain. Flociti terbaik pokoknyaa!!</p>
+                                <p class="font-weight-bold">- Dwi Anggara -</p>
                             </div>
                         </div>
                     </div>
@@ -166,34 +166,40 @@
             <div class="row text-center">
                 <div class="col-lg-12 mt-5">
                     <h2>Hubungi Kami</h2>
-                    <p>Memiliki pertanyaan? kami sangat senang mendengarnya dari anda.<br> Kirim kita pesan dan kita akan membalasnya secepatnya!</p>  
+                    <p>Memiliki pertanyaan? kami sangat senang mendengarnya dari anda.<br> Kirim kita pesan dan kita
+                        akan membalasnya secepatnya!</p>
                     <hr>
-                    </div>
+                </div>
             </div>
             <div class="row mt-4">
                 <div class="col-lg-6">
                     <div class="media mt-5  ">
-                        <img class="align-self-start mr-4 mt-2" src="assets/img/icon/cityscapes.png" alt="Generic placeholder image">
+                        <img class="align-self-start mr-4 mt-2" src="assets/img/icon/cityscapes.png"
+                            alt="Generic placeholder image">
                         <div class="media-body">
                             <h5>Pool Bandung</h5>
                             <p>Jl. Hasanudin No.28, Lebakgede, Coblong, Kota Bandung, Jawa Barat 40132</p>
                         </div>
                     </div>
                     <div class="media mt-3">
-                        <img class="align-self-start mr-4 mt-2" src="assets/img/icon/buildings.png" alt="Generic placeholder image">
+                        <img class="align-self-start mr-4 mt-2" src="assets/img/icon/buildings.png"
+                            alt="Generic placeholder image">
                         <div class="media-body">
                             <h5>Pool Jatinangor</h5>
-                            <p>Jl. Raya Bandung Sumedang, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363</p>
+                            <p>Jl. Raya Bandung Sumedang, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363
+                            </p>
                         </div>
                     </div>
                     <div class="media mt-3">
-                        <img class="align-self-start mr-4 mt-2 ml-3" src="assets/img/icon/mobile-phone.png" alt="Generic placeholder image">
+                        <img class="align-self-start mr-4 mt-2 ml-3" src="assets/img/icon/mobile-phone.png"
+                            alt="Generic placeholder image">
                         <div class="media-body">
                             <h5 class="mt-2 ml-3">0811-221-967</h5>
                         </div>
                     </div>
                     <div class="media mt-4">
-                        <img class="align-self-start mr-4 mt-2 ml-3" src="assets/img/icon/gmail.png" alt="Generic placeholder image">
+                        <img class="align-self-start mr-4 mt-2 ml-3" src="assets/img/icon/gmail.png"
+                            alt="Generic placeholder image">
                         <div class="media-body">
                             <h5 class="mt-2 ml-3">flociti@gmail.com</h5>
                         </div>
@@ -202,11 +208,13 @@
                 <div class="col-lg-6">
                     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                         <div class="form-group input-material pb-1">
-                            <input type="text" name="nama" class="form-control text-capitalize" value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['nama']; ?>"/>
+                            <input type="text" name="nama" class="form-control text-capitalize"
+                                value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['nama']; ?>" />
                             <label for="nama">Nama</label>
                         </div>
                         <div class="form-group input-material pb-1">
-                            <input type="email" name="email" class="form-control" value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['email']; ?>"/>
+                            <input type="email" name="email" class="form-control"
+                                value="<?php if(isset($_SESSION['nama'])) echo $_SESSION['email']; ?>" />
                             <label for="email">Email</label>
                         </div>
                         <div class="form-group input-material pb-1">
@@ -228,20 +236,22 @@
 
     <script>
         $(".owl-carousel").owlCarousel({
-            items:1,
-            nav:true,
+            items: 1,
+            nav: true,
             autoPlay: true,
-            rewindNav:true,
-            slideSpeed : 200,
-            paginationSpeed : 800,
-            rewindSpeed : 1000,
+            rewindNav: true,
+            slideSpeed: 200,
+            paginationSpeed: 800,
+            rewindSpeed: 1000,
+            loop:true,
+            dots:false
         });
-        $( ".owl-prev").html('<i class="fa fa-chevron-left"></i>');
-        $( ".owl-next").html('<i class="fa fa-chevron-right"></i>');
+        $(".owl-prev").html('<i class="fa fa-chevron-left"></i>');
+        $(".owl-next").html('<i class="fa fa-chevron-right"></i>');
         $('#partial-view').partialViewSlider({
             width: 45,
             controls: true,
-            controlsPosition: 'inside', 
+            controlsPosition: 'inside',
             backdrop: true,
             dots: true,
             auto: true,
@@ -253,9 +263,9 @@
             prevHtml: '<i class="fas fa-chevron-left"></i>',
             nextHtml: '<i class="fas fa-chevron-right"></i>'
         });
-        $(function() {
+        $(function () {
             $.scrollify({
-            section : "section",
+                section: "section",
             });
         });
         AOS.init();

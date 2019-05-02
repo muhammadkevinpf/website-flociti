@@ -164,6 +164,7 @@
                           <th>Tanggal</th>
                           <th>Jumlah</th>
                           <th>Kontak</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody class="text-center">
