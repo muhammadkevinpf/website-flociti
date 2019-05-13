@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/flocity/assets/css/custombox.min.css" type="text/css"/>
 <link rel="stylesheet" href="/flocity/assets/css/tooltipster.bundle.min.css" type="text/css"/>
 <link rel="stylesheet" href="/flocity/assets/css/bootstrap-table.min" type="text/css"/>
+<link rel="stylesheet" href="/flocity/assets/css/Chart.min.css" type="text/css"/>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 

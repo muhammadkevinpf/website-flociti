@@ -33,8 +33,18 @@
 
         public function register($conn,$nama,$email,$password,$telp){
             $sql = "insert into users values(null,'{$nama}','{$email}','{$password}','{$telp}')";
-            echo "<script>alert(".$sql.")</script>";
+            // echo "<script>alert(".$sql.")</script>";
             $conn->query($sql);
+            $this->ambilId($conn);
+            $sql2 = "insert into payment values(null,'{$this->getID()}','0')";
+            $conn->query($sql2);
+        }
+
+        public function ambilID($conn){
+            $sql = "select * from users order by id DESC";
+            $res = $conn->query($sql);
+            $row = $res->fetch_assoc();
+            $this->setID($row['id']);
         }
         public function login($conn,$email,$password){
             $sql = "select * from users where email = '{$email}' and password = '{$password}'";
@@ -42,6 +52,8 @@
             if(mysqli_num_rows($res) > 0){
                 if($email == 'admin@flociti.com'){
                     echo '<meta http-equiv="refresh" content="0;url=/flocity/admin/page/dashboard.php" />';
+                }else if($email == 'manager@flociti.com'){
+                    echo '<meta http-equiv="refresh" content="0;url=/flocity/manager/page/dashboard.php" />';
                 }else{
                     $row = $res->fetch_assoc();
                     $this->setNama($row['nama']);

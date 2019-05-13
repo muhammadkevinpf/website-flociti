@@ -54,6 +54,12 @@
               <p>Kontak</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./total.php">
+            <i class="material-icons">bar_chart</i>
+              <p>Rekapitulasi Penjualan</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -154,15 +160,16 @@
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table tabOrder">
+                    <table class="table tabOrder" id="tableOrder">
                       <thead class="text-black text-center">
                         <tr>
-                          <th>Nomor</th>
+                          <th>Nomor Transaksi</th>
                           <th>Nama</th>
                           <th>Dari</th>
                           <th>Jam</th>
                           <th>Tanggal</th>
                           <th>Jumlah</th>
+                          <th>Total Harga</th>
                           <th>Kontak</th>
                           <th>Status</th>
                         </tr>
@@ -214,7 +221,6 @@
   <!-- Library for adding dinamically elements -->
   <script src="../assets/js/plugins/arrive.min.js"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
   <script src="../assets/js/plugins/chartist.min.js"></script>
   <script src="../assets/js/bootstrap-table.min.js"></script>
@@ -224,6 +230,7 @@
   <script src="../assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     $(document).ready(function () {
       $().ready(function () {
@@ -408,6 +415,40 @@
         search: true,
         sortable: true,
       });
+      // $('#linkBayar').click(function(){
+      //   swal({
+      //     title: "Rubah Status?",
+      //     // text: "Once deleted, you will not be able to recover this imaginary file!",
+      //     icon: "warning",
+      //     buttons: true,
+      //     dangerMode: true,
+      //   })
+      //   .then((willDelete) => {
+      //     if (willDelete) {
+      //       swal("Poof! Your imaginary file has been deleted!", {
+      //         icon: "success",
+      //       });
+      //     } else {
+      //       swal("Your imaginary file is safe!");
+      //     }
+      //   });
+      // });
+            $('#tableOrder tbody tr').click(function(){
+                var edan = $(this).index();
+                var nomor = $('#nomor'+edan).text();
+                $('#linkBayar'+edan).click(function(){
+                  $.ajax({
+                        type: 'get',
+                        url: 'updateStatus.php',
+                        data: {id:nomor},
+                        success: function(response){
+                            if(response == 'berhasil'){
+                              window.location.href = 'dashboard.php';
+                            }
+                        }
+                    });
+              });
+            });
     });
   </script>
 </body>

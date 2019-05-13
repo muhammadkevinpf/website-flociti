@@ -15,6 +15,6 @@
         $conn->query($sql2);
         echo "berhasil";
     }else{
-        
+        echo "gagal";
     }
 ?>

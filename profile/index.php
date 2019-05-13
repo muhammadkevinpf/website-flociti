@@ -224,9 +224,9 @@
                                 $('#modalThanks').on('hidden.bs.modal', function () {
                                     window.location.href = '/flocity/profile/';
                                 });
+                            }else{
+                                swal("Pembayaran Gagal", "Saldo anda kurang, silahkan isi ulang saldo", "error");
                             }
-                            
-                            
                         }
                     });
                 });
